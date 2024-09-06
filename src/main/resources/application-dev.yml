@@ -1,0 +1,6 @@
+spring:
+  profiles: dev
+  server:
+    port: 85
+  item-service:
+    url: http://localhost:85
