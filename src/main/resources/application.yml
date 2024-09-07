@@ -25,9 +25,21 @@ api:
   endpoint:
     base-url: /api
 
+# API Configuration for all services
+user:
+  url:
+    service: http://localhost:81/api/user
+
+restaurant:
+  url:
+    service: http://localhost:82/api/restaurant
+
 address:
   url:
     service: http://localhost:86/api/address
+
+
+
 
 
 # Server Configuration
