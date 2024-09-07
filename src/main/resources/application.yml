@@ -38,10 +38,6 @@ address:
   url:
     service: http://localhost:86/api/address
 
-
-
-
-
 # Server Configuration
 server:
   error:

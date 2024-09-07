@@ -1,8 +1,10 @@
 package com.csci318.microservice.item.Services.Impl;
 
 import com.csci318.microservice.item.DTOs.ItemDTORequest;
+import com.csci318.microservice.item.DTOs.ItemDTOResponse;
 import com.csci318.microservice.item.Entities.Item;
 import com.csci318.microservice.item.Entities.Relation.Restaurant;
+import com.csci318.microservice.item.Mappers.Impl.ItemMapper;
 import com.csci318.microservice.item.Repositories.ItemRepository;
 import com.csci318.microservice.item.Services.ItemService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,21 +21,18 @@ public class ItemServiceImpl implements ItemService {
 
     private final RestTemplate restTemplate;
     private final ItemRepository itemRepository;
-    private final ApplicationEventPublisher eventPublisher;
-
-    @Value("${address.url.service}")
-    private String ADDRESS_URL;
+    private final ItemMapper itemMapper;
 
     @Value("${restaurant.url.service}")
     private String RESTAURANT_URL;
 
-    public ItemServiceImpl(RestTemplate restTemplate, ItemRepository itemRepository, ApplicationEventPublisher eventPublisher) {
+    public ItemServiceImpl(RestTemplate restTemplate, ItemRepository itemRepository, ItemMapper itemMapper) {
         this.restTemplate = restTemplate;
         this.itemRepository = itemRepository;
-        this.eventPublisher = eventPublisher;
+        this.itemMapper = itemMapper;
     }
 
-    public Restaurant createItemForRestaurant(ItemDTORequest itemDTORequest, UUID restaurantId) {
+    public ItemDTOResponse createItemForRestaurant(ItemDTORequest itemDTORequest, UUID restaurantId) {
         Restaurant restaurant = restTemplate.getForObject(RESTAURANT_URL + "/findById/" + restaurantId, Restaurant.class);
         if (restaurant == null) {
             log.error("Restaurant not found with restaurantId: " + restaurantId);
@@ -47,7 +46,8 @@ public class ItemServiceImpl implements ItemService {
             item.setPrice(itemDTORequest.getPrice());
             item.setAvailability(itemDTORequest.isAvailability());
             this.itemRepository.save(item);
-            return restaurant;
+            log.info("Item created for restaurant with restaurantId: " + restaurantId);
+            return this.itemMapper.toDtos(item);
         } catch (Exception e) {
             log.error("Error creating item for restaurant with restaurantId: " + restaurantId);
             return null;

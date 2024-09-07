@@ -1,8 +1,19 @@
 package com.csci318.microservice.item.DTOs;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class ItemDTOResponse {
     private String name;
-    private String restaurantId;
+    private UUID restaurantId;
     private String description;
     private double price;
     private boolean availability;

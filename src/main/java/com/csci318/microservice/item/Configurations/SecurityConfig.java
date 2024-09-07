@@ -20,7 +20,7 @@ public class SecurityConfig {
     private static final String[] PATH = {
             "/error",
             "/h2-console/**",
-            "/api/item/**",
+            "/api/items/**",
     };
 
     // CORS configuration

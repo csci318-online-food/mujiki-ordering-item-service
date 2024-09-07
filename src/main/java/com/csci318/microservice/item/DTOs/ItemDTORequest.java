@@ -13,7 +13,6 @@ import java.util.UUID;
 @Setter
 public class ItemDTORequest {
     private String name;
-    private String restaurantId;
     private String description;
     private double price;
     private boolean availability;
