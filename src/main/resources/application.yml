@@ -28,22 +28,22 @@ api:
 # API Configuration for all services
 user:
   url:
-    service: http://localhost:81/api/user
+    service: http://localhost:8081/api/user
 
 restaurant:
   url:
-    service: http://localhost:82/api/restaurant
+    service: http://localhost:8082/api/restaurant
 
 address:
   url:
-    service: http://localhost:86/api/address
+    service: http://localhost:8086/api/address
 
 # Server Configuration
 server:
   error:
     whitelabel:
       enabled: false
-  port: 85
+  port: 8085
 
 
 
