@@ -9,4 +9,6 @@ import java.util.UUID;
 public interface ItemService {
 
     ItemDTOResponse createItemForRestaurant(ItemDTORequest itemDTORequest, UUID restaurantId);
+
+    ItemDTOResponse getItemById(UUID id);
 }

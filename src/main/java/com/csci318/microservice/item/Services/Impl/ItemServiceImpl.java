@@ -54,4 +54,14 @@ public class ItemServiceImpl implements ItemService {
         }
     }
 
+    @Override
+    public ItemDTOResponse getItemById(UUID id) {
+        Item item = this.itemRepository.findById(id).orElse(null);
+        if (item == null) {
+            log.error("Item not found with id: " + id);
+            return null;
+        }
+        return this.itemMapper.toDtos(item);
+    }
+
 }

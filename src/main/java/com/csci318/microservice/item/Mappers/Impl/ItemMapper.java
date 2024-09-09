@@ -15,6 +15,7 @@ public class ItemMapper implements Mapper<Item, ItemDTOResponse, ItemDTORequest>
     @Override
     public ItemDTOResponse toDtos(Item entity) {
         ItemDTOResponse itemDTOResponse = new ItemDTOResponse();
+        itemDTOResponse.setId(entity.getId());
         itemDTOResponse.setName(entity.getName());
         itemDTOResponse.setRestaurantId(entity.getRestaurantId());
         itemDTOResponse.setDescription(entity.getDescription());

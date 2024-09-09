@@ -12,6 +12,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class ItemDTOResponse {
+    private UUID id;
     private String name;
     private UUID restaurantId;
     private String description;

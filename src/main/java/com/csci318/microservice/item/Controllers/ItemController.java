@@ -20,6 +20,15 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ItemDTOResponse> getItemById(@PathVariable UUID id) {
+        ItemDTOResponse itemDTOResponse = this.itemService.getItemById(id);
+        if (itemDTOResponse == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(itemDTOResponse);
+    }
+
     @PostMapping("/create")
     public ResponseEntity<ItemDTOResponse> createItemForRestaurant(@RequestBody ItemDTORequest itemDTORequest, @RequestParam(name = "restaurantId") UUID restaurantId) {
         try {
