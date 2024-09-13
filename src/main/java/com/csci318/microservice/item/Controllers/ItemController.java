@@ -2,7 +2,7 @@ package com.csci318.microservice.item.Controllers;
 
 import com.csci318.microservice.item.DTOs.ItemDTORequest;
 import com.csci318.microservice.item.DTOs.ItemDTOResponse;
-import com.csci318.microservice.item.Entities.Item;
+import com.csci318.microservice.item.Domain.Entities.Item;
 import com.csci318.microservice.item.Services.ItemService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

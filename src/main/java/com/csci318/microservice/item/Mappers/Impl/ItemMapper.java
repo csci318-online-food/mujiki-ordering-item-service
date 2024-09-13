@@ -2,7 +2,7 @@ package com.csci318.microservice.item.Mappers.Impl;
 
 import com.csci318.microservice.item.DTOs.ItemDTORequest;
 import com.csci318.microservice.item.DTOs.ItemDTOResponse;
-import com.csci318.microservice.item.Entities.Item;
+import com.csci318.microservice.item.Domain.Entities.Item;
 import com.csci318.microservice.item.Mappers.Mapper;
 import org.springframework.stereotype.Component;
 

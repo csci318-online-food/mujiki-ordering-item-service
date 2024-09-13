@@ -1,4 +1,4 @@
-package com.csci318.microservice.item.Entities;
+package com.csci318.microservice.item.Domain.Entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

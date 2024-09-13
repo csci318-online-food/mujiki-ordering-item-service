@@ -2,8 +2,8 @@ package com.csci318.microservice.item.Services.Impl;
 
 import com.csci318.microservice.item.DTOs.ItemDTORequest;
 import com.csci318.microservice.item.DTOs.ItemDTOResponse;
-import com.csci318.microservice.item.Entities.Item;
-import com.csci318.microservice.item.Entities.Relation.Restaurant;
+import com.csci318.microservice.item.Domain.Entities.Item;
+import com.csci318.microservice.item.Domain.Relations.Restaurant;
 import com.csci318.microservice.item.Mappers.Impl.ItemMapper;
 import com.csci318.microservice.item.Repositories.ItemRepository;
 import com.csci318.microservice.item.Services.ItemService;

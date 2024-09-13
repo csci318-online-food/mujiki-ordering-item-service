@@ -1,4 +1,4 @@
-package com.csci318.microservice.item.Entities.Relation;
+package com.csci318.microservice.item.Domain.Relations;
 
 import com.csci318.microservice.item.Constants.CuisineType;
 
